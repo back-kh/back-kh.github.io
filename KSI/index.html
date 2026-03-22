@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Khmer Stone Inscription Analysis -  Nimol Thuon</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
 
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-indigo-700 text-white flex items-center justify-center font-bold font-serif shadow-sm">NT</div>
+                
+                </div>
+                <div class="flex items-center">
+                    <a href="index.html" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-lg transition-colors">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Back to Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Project Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+        
+        <!-- Project Header -->
+        <header class="mb-10 text-center md:text-left">
+            <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
+                <span class="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Document Analysis</span>
+                <span class="px-3 py-1 bg-amber-50 border border-amber-100 text-amber-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Cultural Heritage</span>
+                <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Epigraphy</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 font-serif leading-tight mb-4">
+                Ancient Khmer Stone Inscription Analysis
+            </h1>
+            <strong><h4>Project Lead: Nimol Thuon</h4></strong>
+            <p class="text-lg text-slate-500">
+                Pioneering digital document analysis for the preservation of historical artifacts from the 6th to the 15th century.
+            </p>
+        </header>
+
+        <!-- Coming Soon Notice -->
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mb-12 shadow-sm">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <i class="fa-solid fa-person-digging text-amber-500 text-2xl mt-1"></i>
+                </div>
+                <div class="ml-4">
+                    <h3 class="text-lg font-bold text-amber-800">Research in Progress (Comming soon ...)</h3>
+                    <p class="mt-2 text-amber-700 leading-relaxed">
+                        The full findings, methodology, and datasets for this research are currently being compiled and reviewed. Detailed publication information, code repositories, and structural analysis results are <strong>coming soon by the authors</strong>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+            <div class="mt-10 pt-8 border-t border-slate-100 flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <img src="pics/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eef2ff/4f46e5?text=NT';" alt="Dr. Nimol Thuon" class="w-12 h-12 rounded-full border-2 border-slate-200">
+                    <div>
+                        <p class="text-sm font-bold text-slate-900">Nimol Thuon</p>
+                        <p class="text-xs text-slate-500">Project Lead</p>
+                    </div>
+                </div>
+                <a href="mailto:nimol.thn@gmail.com" class="text-brand-600 hover:text-brand-800 text-sm font-semibold transition-colors">
+                    Contact for Collaboration <i class="fa-solid fa-envelope ml-1"></i>
+                </a>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-10 mt-12 text-center">
+        <p class="text-sm font-medium text-slate-500">&copy; <span id="year"></span> Nimol Thuon. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
