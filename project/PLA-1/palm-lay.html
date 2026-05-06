@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALM-LAY Dataset | PALM-GLOBAL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] },
+                    colors: { brand: { 50: '#fff7ed', 100: '#ffedd5', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 900: '#7c2d12' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #ffffff; }
+        .nav-link { transition: all 0.2s ease-in-out; padding-bottom: 2px; }
+        .nav-link.active { color: #ea580c; font-weight: 600; border-bottom: 2px solid #ea580c; }
+        .badge { display: inline-block; padding: 4px 12px; background-color: #fff7ed; border: 1px solid #ffedd5; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; color: #ea580c; margin: 2px; }
+        .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.08); transform: translateY(-2px); }
+    </style>
+</head>
+<body class="text-slate-700 font-sans antialiased">
+    <nav class="bg-white border-b border-slate-200 fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-2 text-slate-600 hover:text-brand-600 transition-colors"><i class="fa-solid fa-arrow-left"></i><span class="text-sm font-semibold hidden sm:inline">PALM-GLOBAL</span></a>
+                    <span class="hidden sm:inline text-slate-300">|</span>
+                    <span class="font-serif font-bold text-lg text-slate-900">PALM-LAY</span>
+                </div>
+                <div class="hidden md:block">
+                    <div id="nav-links" class="flex items-baseline space-x-6">
+                        <a href="#summary" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Summary</a>
+                        <a href="#schema" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Schema</a>
+                        <a href="#workflow" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Workflow</a>
+                        <a href="#benchmarks" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Benchmarks</a>
+                        <a href="#release" class="nav-link text-sm font-medium text-slate-600 hover:text-brand-600">Release</a>
+                    </div>
+                </div>
+                <button id="mobile-menu-button" type="button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-brand-600 hover:bg-brand-50"><i class="fa-solid fa-bars text-lg"></i></button>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t border-slate-100 shadow-sm" id="mobile-menu">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#summary" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50">Summary</a>
+                <a href="#schema" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50">Schema</a>
+                <a href="#workflow" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50">Workflow</a>
+                <a href="#benchmarks" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50">Benchmarks</a>
+                <a href="#release" class="block px-3 py-2 rounded-md text-sm font-medium text-slate-600 hover:text-brand-600 hover:bg-brand-50">Release</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 bg-gradient-to-br from-orange-50 via-white to-amber-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="flex flex-wrap gap-2 mb-6"><span class="badge">Dataset task</span><span class="badge">ICDAR 2025 Workshops</span><span class="badge">LNCS 16226</span></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-900 font-serif leading-tight">PALM-LAY: A Multi-script Cross-Regional Dataset for Layout Analysis of Palm Leaf Manuscripts</h1>
+                    <p class="mt-6 text-xl text-slate-600 leading-relaxed">The first PALM-GLOBAL task page, summarizing the dataset, annotation schema, workflow, and release space for unified palm leaf manuscript layout analysis.</p>
+                    <div class="mt-8 flex flex-wrap gap-3"><a href="https://github.com/back-kh/PALM-LAY" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold shadow-sm">GitHub Dataset <i class="fa-brands fa-github"></i></a><a href="https://doi.org/10.1007/978-3-032-09371-4_15" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg hover:border-brand-300 hover:text-brand-700 transition-colors font-semibold shadow-sm">Paper DOI <i class="fa-solid fa-up-right-from-square"></i></a></div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm"><img src="project.jpg" alt="PALM-LAY multi-script palm leaf overview" class="w-full rounded-lg object-cover"><div class="grid grid-cols-3 gap-3 mt-3 text-center"><div class="bg-brand-50 rounded-lg p-3"><div class="text-2xl font-bold text-brand-600">566+</div><div class="text-xs text-brand-900">pages</div></div><div class="bg-brand-50 rounded-lg p-3"><div class="text-2xl font-bold text-brand-600">6k+</div><div class="text-xs text-brand-900">regions</div></div><div class="bg-brand-50 rounded-lg p-3"><div class="text-2xl font-bold text-brand-600">6</div><div class="text-xs text-brand-900">scripts</div></div></div></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="space-y-20">
+            <section id="summary" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold text-slate-900 font-serif mb-8 flex items-center gap-3"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Dataset Summary</h2>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2 space-y-4 text-slate-700 leading-relaxed text-justify">
+                        <p><strong>PALM-LAY</strong> is a unified cross-regional layout-analysis dataset for historical palm leaf manuscripts. It addresses a key limitation in palm leaf document analysis: annotated resources are often scarce, fragmented by region, and difficult to compare across scripts.</p>
+                        <p>The dataset contains more than <strong>566 manuscript pages</strong> and over <strong>6,000 annotated regions</strong> spanning <strong>Tamil, Kambaramayanam, Jathakam, Khmer, Sundanese, and Balinese</strong>. These scripts have distinct linguistic and visual properties, but many share long, narrow manuscript pages, text-line structures, degradation patterns, and archival artifacts.</p>
+                        <p>PALM-LAY supports layout-aware experiments before OCR and full text recognition. It is designed to help researchers evaluate cross-script generalization, region detection, manuscript structure understanding, and preservation-oriented document processing.</p>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                        <h3 class="font-bold text-slate-900 font-serif text-xl mb-4">Paper Information</h3>
+                        <ul class="space-y-3 text-sm text-slate-600">
+                            <li><strong>Authors:</strong> Nimol Thuon, Jun Du, Panhapin Theang, Ratana Thuon</li>
+                            <li><strong>Venue:</strong> ICDAR 2025 Workshops, DALL 2025</li>
+                            <li><strong>Book:</strong> Document Analysis and Recognition – ICDAR 2025 Workshops</li>
+                            <li><strong>Pages:</strong> 246–262</li>
+                            <li><strong>First online:</strong> 02 January 2026</li>
+                            <li><strong>DOI:</strong> 10.1007/978-3-032-09371-4_15</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="schema" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold text-slate-900 font-serif mb-8 flex items-center gap-3"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Unified Layout Schema</h2>
+                <p class="max-w-4xl text-slate-700 leading-relaxed mb-8">Each page is annotated with seven region categories. The schema captures both traditional manuscript content and additional archival or physical features that can affect document analysis models.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-scroll text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">MainRegion</h3><p class="mt-2 text-sm text-slate-600">Primary manuscript body or palm leaf area.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-grip-lines text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">TextLineRegion</h3><p class="mt-2 text-sm text-slate-600">Individual text lines for layout parsing.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-align-left text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">ParagraphRegion</h3><p class="mt-2 text-sm text-slate-600">Grouped text blocks or paragraph-like structures.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-asterisk text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">SymbolicMark</h3><p class="mt-2 text-sm text-slate-600">Markers, separators, and symbolic manuscript signs.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-triangle-exclamation text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">PhysicalDamage</h3><p class="mt-2 text-sm text-slate-600">Holes, cracks, stains, missing parts, and degradation.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-image text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">Illustration</h3><p class="mt-2 text-sm text-slate-600">Decorative or semantic non-textual drawings.</p></div>
+                    <div class="card border border-slate-200 rounded-lg p-5"><i class="fa-solid fa-box-archive text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-slate-900">Other</h3><p class="mt-2 text-sm text-slate-600">Modern archival additions or regions outside the core labels.</p></div>
+                    <div class="card border border-dashed border-brand-300 bg-brand-50 rounded-lg p-5"><i class="fa-solid fa-plus text-brand-600 text-xl"></i><h3 class="mt-3 font-bold text-brand-900">Coming soon</h3><p class="mt-2 text-sm text-brand-800">More examples, color maps, and downloadable annotation guidelines.</p></div>
+                </div>
+            </section>
+
+            <section id="workflow" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold text-slate-900 font-serif mb-8 flex items-center gap-3"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Dataset Workflow</h2>
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-5">
+                        <div class="flex gap-4"><div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold shrink-0">1</div><div><h3 class="font-bold text-slate-900">Curate cross-regional sources</h3><p class="text-sm text-slate-600 mt-1">Collect pages from publicly available palm leaf manuscript collections covering South and Southeast Asian scripts.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold shrink-0">2</div><div><h3 class="font-bold text-slate-900">Apply one annotation schema</h3><p class="text-sm text-slate-600 mt-1">Use a consistent set of region labels so models can be trained and compared across different scripts.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold shrink-0">3</div><div><h3 class="font-bold text-slate-900">Verify layout regions</h3><p class="text-sm text-slate-600 mt-1">Review main areas, text lines, damage, symbols, illustrations, and other regions for quality.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold shrink-0">4</div><div><h3 class="font-bold text-slate-900">Benchmark and release</h3><p class="text-sm text-slate-600 mt-1">Evaluate object detection models and provide dataset documentation for reproducible research.</p></div></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="../PLA/d1.jpg" alt="Annotation workflow interface" class="rounded-lg shadow-sm object-cover h-48 w-full">
+                        <img src="../PLA/r5.jpg" alt="Palm leaf manuscript processing sample" class="rounded-lg shadow-sm object-cover h-48 w-full">
+                        <img src="../PLA/e4.jpg" alt="Enhanced palm leaf manuscript sample" class="rounded-lg shadow-sm object-cover h-48 w-full col-span-2">
+                    </div>
+                </div>
+            </section>
+
+            <section id="benchmarks" class="scroll-mt-24 bg-slate-50 border border-slate-200 rounded-lg p-8">
+                <h2 class="text-3xl font-bold text-slate-900 font-serif mb-6 flex items-center gap-3"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Benchmark Tasks</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white border border-slate-200 rounded-lg p-6"><h3 class="font-bold text-slate-900 font-serif text-xl">Region detection</h3><p class="mt-3 text-sm text-slate-600">Detect manuscript regions using object detection models and evaluate category-level performance.</p></div>
+                    <div class="bg-white border border-slate-200 rounded-lg p-6"><h3 class="font-bold text-slate-900 font-serif text-xl">Cross-script transfer</h3><p class="mt-3 text-sm text-slate-600">Train and test across different scripts to measure generalization under domain shift.</p></div>
+                    <div class="bg-white border border-slate-200 rounded-lg p-6"><h3 class="font-bold text-slate-900 font-serif text-xl">Preservation analysis</h3><p class="mt-3 text-sm text-slate-600">Localize physical damage and structural regions that influence restoration and digitization workflows.</p></div>
+                </div>
+                <div class="mt-6 border border-dashed border-brand-300 bg-brand-50 rounded-lg p-5 text-brand-900"><i class="fa-solid fa-person-digging mr-2"></i><strong>Coming soon:</strong> model cards, evaluation tables, split definitions, downloadable annotations, and sample notebooks.</div>
+            </section>
+
+            <section id="release" class="scroll-mt-24">
+                <h2 class="text-3xl font-bold text-slate-900 font-serif mb-8 flex items-center gap-3"><span class="w-2 h-2 bg-brand-600 rounded-full"></span>Release and Citation</h2>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="border border-slate-200 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-slate-900 font-serif">Dataset access</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">The paper states that the dataset and documentation will be publicly released through the PALM-LAY GitHub repository. This page reserves space for update notes, examples, and version history.</p>
+                        <a href="https://github.com/back-kh/PALM-LAY" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 px-4 py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors font-semibold">Open GitHub <i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <div class="border border-slate-200 rounded-lg p-6 bg-slate-50">
+                        <h3 class="text-xl font-bold text-slate-900 font-serif">Citation</h3>
+                        <p class="mt-3 text-sm text-slate-700 leading-relaxed">Thuon, N., Du, J., Theang, P., Thuon, R. (2026). PALM-LAY: A Multi-script Cross-Regional Dataset for Layout Analysis of Palm Leaf Manuscripts. In: Jin, L., Zanibbi, R., Eglin, V. (eds) <em>Document Analysis and Recognition – ICDAR 2025 Workshops</em>. ICDAR 2025. LNCS, vol. 16226. Springer, Cham.</p>
+                        <p class="mt-3 text-sm"><strong>DOI:</strong> <a class="text-brand-600 hover:underline" href="https://doi.org/10.1007/978-3-032-09371-4_15" target="_blank" rel="noopener">10.1007/978-3-032-09371-4_15</a></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-slate-200 bg-white py-12 mt-16"><div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-4 items-center justify-between"><p class="text-sm text-slate-600"><strong>&copy; 2026 PALM-GLOBAL Project Team.</strong> PALM-LAY Dataset Task.</p><a href="mailto:nimol.thuon@gmail.com" class="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 text-brand-700 hover:bg-brand-100 rounded-lg text-sm font-medium transition-colors"><i class="fa-solid fa-envelope"></i>Contact</a></div></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) link.classList.add('active');
+                        });
+                    }
+                });
+            }, { root: null, rootMargin: '-100px 0px -60% 0px', threshold: 0 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
