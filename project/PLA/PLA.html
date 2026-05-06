@@ -80,6 +80,14 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             transform: translateY(-2px);
         }
+        
+        /* Image container */
+        .image-container {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
     </style>
 </head>
 <body class="text-slate-700 font-sans antialiased">
@@ -220,6 +228,17 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Sample Manuscripts Image -->
+                <div class="image-container">
+                    <img src="project.jpg" 
+                         onerror="this.src='https://via.placeholder.com/900x400/f0fdf4/16a34a?text=Sample+Palm+Leaf+Manuscripts&font=inter';" 
+                         alt="Sample palm leaf manuscripts from Southeast Asia showing Sundanese, Balinese, and Khmer scripts" 
+                         class="w-full h-auto object-cover">
+                </div>
+                <p class="text-xs text-slate-500 mt-2 text-center">
+                    <em>Figure 1: Sample palm leaf manuscripts from Southeast Asia featuring diverse scripts and preservation states</em>
+                </p>
             </section>
 
             <!-- Tasks Section -->
