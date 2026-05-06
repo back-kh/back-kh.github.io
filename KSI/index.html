@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ancient Khmer Stone Inscription Analysis -  Nimol Thuon</title>
-    <!-- Tailwind CSS -->
+    <meta name="description" content="Project page for Ancient Khmer Stone Inscription Analysis by Nimol Thuon.">
+    <title>Ancient Khmer Stone Inscription Analysis | Nimol Thuon</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -22,14 +19,23 @@
                         serif: ['Merriweather', 'serif'],
                     },
                     colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            900: '#312e81',
+                        ink: '#111827',
+                        stoneblue: {
+                            50: '#f5f7fb',
+                            100: '#e8eef8',
+                            500: '#526d93',
+                            700: '#334964',
+                            900: '#162031',
+                        },
+                        sandstone: {
+                            50: '#fffaf0',
+                            100: '#f5ead7',
+                            500: '#c7954d',
+                            700: '#8a6231',
                         }
+                    },
+                    boxShadow: {
+                        soft: '0 24px 80px -32px rgba(15, 23, 42, 0.28)',
                     }
                 }
             }
@@ -37,216 +43,233 @@
     </script>
     <style>
         body {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 40px 40px;
+            background:
+                radial-gradient(circle at top left, rgba(82, 109, 147, 0.12), transparent 32rem),
+                linear-gradient(180deg, #f8fafc 0%, #ffffff 48%, #f8fafc 100%);
+        }
+        .paper-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.94));
+        }
+        .figure-frame {
+            background: repeating-linear-gradient(135deg, rgba(199,149,77,0.12) 0, rgba(199,149,77,0.12) 1px, transparent 1px, transparent 10px);
         }
     </style>
 </head>
-<body class="text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
-
-    <!-- Top Navigation Bar -->
-    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-indigo-700 text-white flex items-center justify-center font-bold font-serif shadow-sm">NT</div>
+<body class="font-sans text-slate-700 antialiased selection:bg-sandstone-100 selection:text-stoneblue-900">
+    <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <a href="../index.html" class="flex items-center gap-3" aria-label="Back to Nimol Thuon's profile">
+                <div class="flex h-9 w-9 items-center justify-center rounded-full bg-stoneblue-900 text-sm font-extrabold text-white shadow-sm">NT</div>
+                <div class="hidden leading-tight sm:block">
+                    <p class="text-sm font-bold text-slate-900">Nimol Thuon</p>
+                    <p class="text-xs text-slate-500">Research Project</p>
                 </div>
-                <div class="flex items-center">
-                    <a href="index.html" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-lg transition-colors">
-                        <i class="fa-solid fa-arrow-left mr-2"></i> Back to Profile
-                    </a>
-                </div>
+            </a>
+            <div class="flex items-center gap-2 text-sm font-semibold">
+                <a href="#method" class="hidden rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 md:inline-flex">Method</a>
+                <a href="#details" class="hidden rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 md:inline-flex">Details</a>
+                <a href="../index.html" class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 shadow-sm transition hover:border-stoneblue-200 hover:bg-stoneblue-50 hover:text-stoneblue-900">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Profile
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Project Content -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        
-        <!-- Project Header -->
-        <header class="mb-12 text-center md:text-left">
-            <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
-                <span class="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Document Analysis</span>
-                <span class="px-3 py-1 bg-amber-50 border border-amber-100 text-amber-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Cultural Heritage</span>
-                <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Epigraphy</span>
-                <span class="px-3 py-1 bg-blue-50 border border-blue-100 text-blue-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Computer Vision</span>
-            </div>
-            
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 font-serif leading-tight mb-6">
-                Ancient Khmer Stone Inscriptions: Computational Digital Analysis 
-            </h1>
-            
-            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto md:mx-0">
-                Pioneering digital document analysis methodologies for the preservation, transcription, and structural understanding of historical Khmer artifacts spanning the 6th to the 15th centuries.
-            </p>
-        </header>
-
-        <!-- Collaborations & Team Section -->
-        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 mb-10">
-            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-100 pb-3">Project Consortium & Contributors</h3>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Research Team -->
-                <div>
-                    <h4 class="text-slate-800 font-semibold mb-4 flex items-center">
-                        <i class="fa-solid fa-users text-brand-500 mr-2"></i> Research Team
-                    </h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xs">NT</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Nimol Thuon</p>
-                                <p class="text-xs text-slate-500">Project Lead & Methodology Design</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">JD</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Jun Du</p>
-                                <p class="text-xs text-slate-500">Principal Investigator</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">PT</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Panhapin Theang</p>
-                                <p class="text-xs text-slate-500">Data Preparation and Annotations</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">TR</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Thuon Ranysakol</p>
-                                <p class="text-xs text-slate-500">Data Validation</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">CD</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Cheam Darith</p>
-                                <p class="text-xs text-slate-500">Khmer Epigraphy</p>
-                            </div>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">WZ</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Wang Zhangrui</p>
-                                <p class="text-xs text-slate-500">Methodology and Experiments</p>
-                            </div>
-                        </li>
-                    </ul>
+    <main class="mx-auto max-w-7xl px-4 pb-20 pt-28 sm:px-6 lg:px-8">
+        <section class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+            <div>
+                <div class="mb-6 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-stoneblue-100 bg-stoneblue-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-stoneblue-700">Computer Vision</span>
+                    <span class="rounded-full border border-sandstone-100 bg-sandstone-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-sandstone-700">Cultural Heritage</span>
+                    <span class="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">Epigraphy</span>
                 </div>
-
-                <!-- Institutions -->
-                <div>
-                    <h4 class="text-slate-800 font-semibold mb-4 flex items-center">
-                        <i class="fa-solid fa-building-columns text-brand-500 mr-2"></i> Collaborating Institutions
-                    </h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">NERC-SLIP</p>
-                                <p class="text-xs text-slate-500">China</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Université Paris Cité</p>
-                                <p class="text-xs text-slate-500">France</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Paragon International University</p>
-                                <p class="text-xs text-slate-500">Cambodia</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Angkor National Museum</p>
-                                <p class="text-xs text-slate-500">Cambodia</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Coming Soon Notice -->
-        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mb-10 shadow-sm">
-            <div class="flex items-start">
-                <div class="flex-shrink-0">
-                    <i class="fa-solid fa-person-digging text-amber-500 text-2xl mt-1"></i>
-                </div>
-                <div class="ml-4">
-                    <h3 class="text-lg font-bold text-amber-800">Research in Progress and Paper Under Review (Coming soon...)</h3>
-                    <p class="mt-2 text-amber-700 leading-relaxed text-sm">
-                        The full findings, mathematical formulations, and annotated datasets for this research are currently undergoing final review. Detailed publication information, open-source code repositories, and structural analysis results will be published shortly by the authors.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Technical Details Section -->
-        <article class="bg-white p-8 md:p-10 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 font-serif border-b border-slate-100 pb-4">Technical Overview & Methodology</h2>
-            
-            <p class="text-slate-600 leading-relaxed mb-8">
-                The digitization and computational analysis of ancient Khmer stone epigraphy present highly complex computer vision challenges. Unlike standard paper-based historical documents, stone inscriptions suffer from severe material degradation, non-planar topological surfaces, biological weathering (such as lichen and moss), and arbitrary spatial carving layouts. Furthermore, the archaic Khmer script has evolved significantly over a millennium, requiring specialized few-shot learning approaches.
-            </p>
-
-            <div class="space-y-8">
-                <!-- Tech Sub-section 1 -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles text-brand-500"></i> Image Enhancement & Topographical Normalization
-                    </h3>
-                    <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                        Traditional binarization techniques (e.g., Sauvola, Otsu) fail on stone textures due to extreme variations in illumination and depth. Our proposed methodology involves deep learning-based texture filtering and illumination correction networks. These models are designed to decouple the 3D carving depth and lighting artifacts from the actual 2D stroke topology, effectively isolating the carved graphemes from the background stone anomalies.
-                    </p>
-                </div>
-
-                <!-- Tech Sub-section 2 -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-layer-group text-brand-500"></i> Instance Segmentation on Unconstrained Canvases
-                    </h3>
-                    <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                        Ancient stone carvers did not strictly adhere to linear baselines. To address the irregular geometry of the text, we deploy custom Transformer-based segmentation architectures. These models perform instance-level text-line extraction and bounding-polygon generation, mapping the flow of the script across cracks, breaks, and heavily eroded sections of the stele.
-                    </p>
-                </div>
-
-                <!-- Tech Sub-section 3 -->
-                <div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-language text-brand-500"></i> Low-Resource Archaic Script Recognition
-                    </h3>
-                    <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                        Recognizing characters that span from the pre-Angkorian (6th century) to the post-Angkorian periods requires robust intra-class variance handling. We are developing low-resource and few-shot Optical Character Recognition (OCR) models that bridge the topological features of ancient archaic characters with their modern Khmer equivalents, enabling automated transcription and semantic analysis of these cultural artifacts.
-                    </p>
+                <p class="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-slate-500">Research project page</p>
+                <h1 class="font-serif text-4xl font-bold leading-tight text-slate-950 sm:text-5xl lg:text-6xl">
+                    Ancient Khmer Stone Inscription Analysis
+                </h1>
+                <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                    A computational heritage project for documenting, enhancing, segmenting, and reading Khmer stone inscriptions from temple and museum contexts. The goal is to support epigraphers with reproducible visual analysis tools while preserving fragile historical evidence for future study.
+                </p>
+                <div class="mt-7 flex flex-wrap items-center gap-3 text-sm font-semibold">
+                    <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center rounded-full bg-stoneblue-900 px-5 py-3 text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-stoneblue-700">
+                        Contact for collaboration <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#overview" class="inline-flex items-center rounded-full border border-slate-200 bg-white px-5 py-3 text-slate-700 shadow-sm transition hover:border-sandstone-200 hover:bg-sandstone-50">
+                        Read project overview
+                    </a>
                 </div>
             </div>
 
-            <!-- Footer Action Area -->
-            <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="text-sm text-slate-500">
-                    <i class="fa-solid fa-tags mr-2"></i> Keywords: <span class="text-slate-700 font-medium">Stone Epigraphy, Optical Character Recognition (OCR), Topology Normalization, Zero-shot Learning</span>
+            <figure class="paper-card overflow-hidden rounded-[2rem] border border-slate-200 shadow-soft">
+                <div class="figure-frame p-3">
+                    <img src="../pics/photo_2026-05-06_23-00-36.jpg" alt="Collage of Khmer temple reliefs and stone inscriptions used as visual context for the project" class="h-auto w-full rounded-[1.45rem] object-cover shadow-sm">
                 </div>
-                <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center px-5 py-2.5 bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white text-sm font-semibold rounded-xl transition-all shadow-sm">
-                    Contact for Collaboration <i class="fa-solid fa-arrow-right ml-2"></i>
+                <figcaption class="border-t border-slate-100 bg-white px-5 py-4 text-sm leading-6 text-slate-500">
+                    Visual context from Khmer heritage sites: weathered stone surfaces, carved reliefs, and inscription fragments motivate robust enhancement, segmentation, and recognition methods.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section id="overview" class="mt-14 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+            <aside class="paper-card rounded-3xl border border-slate-200 p-6 shadow-soft">
+                <h2 class="text-sm font-extrabold uppercase tracking-[0.24em] text-slate-500">Project status</h2>
+                <div class="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+                    <div class="flex gap-3">
+                        <i class="fa-solid fa-circle-info mt-1 text-amber-600"></i>
+                        <div>
+                            <h3 class="font-bold text-amber-900">Manuscript in preparation</h3>
+                            <p class="mt-2 text-sm leading-6 text-amber-800">
+                                This page presents the research direction and project details only. The paper has not been accepted yet; publication venue, code release, and dataset access will be updated when they are ready.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <dl class="mt-6 space-y-4 text-sm">
+                    <div class="flex justify-between gap-4 border-b border-slate-100 pb-3">
+                        <dt class="font-semibold text-slate-500">Domain</dt>
+                        <dd class="text-right font-bold text-slate-900">Historical document analysis</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 border-b border-slate-100 pb-3">
+                        <dt class="font-semibold text-slate-500">Artifacts</dt>
+                        <dd class="text-right font-bold text-slate-900">Khmer stone inscriptions</dd>
+                    </div>
+                    <div class="flex justify-between gap-4 border-b border-slate-100 pb-3">
+                        <dt class="font-semibold text-slate-500">Period</dt>
+                        <dd class="text-right font-bold text-slate-900">6th–15th centuries</dd>
+                    </div>
+                    <div class="flex justify-between gap-4">
+                        <dt class="font-semibold text-slate-500">Outputs</dt>
+                        <dd class="text-right font-bold text-slate-900">Enhancement, layout, OCR</dd>
+                    </div>
+                </dl>
+            </aside>
+
+            <article class="paper-card rounded-3xl border border-slate-200 p-6 shadow-soft md:p-8">
+                <h2 class="font-serif text-3xl font-bold text-slate-950">Abstract-style overview</h2>
+                <p class="mt-5 leading-8 text-slate-600">
+                    Ancient Khmer inscriptions are an important source for studying language, religion, governance, and cultural exchange in mainland Southeast Asia. However, many surviving inscriptions are carved into uneven stone, partially broken, covered by patina, or photographed under uncontrolled lighting. These conditions make simple thresholding and conventional OCR pipelines unreliable.
+                </p>
+                <p class="mt-4 leading-8 text-slate-600">
+                    This project investigates a practical computer vision pipeline for Khmer epigraphic material: image quality assessment, stone-texture suppression, inscription region localization, text-line and glyph candidate segmentation, and low-resource recognition. The work is designed as an assistive system rather than a replacement for expert epigraphers, emphasizing interpretable outputs, visual evidence, and human-in-the-loop correction.
+                </p>
+                <div class="mt-7 grid gap-4 sm:grid-cols-3">
+                    <div class="rounded-2xl bg-slate-50 p-4">
+                        <p class="text-2xl font-extrabold text-stoneblue-900">01</p>
+                        <p class="mt-2 text-sm font-semibold text-slate-700">Enhance weak carvings under uneven illumination.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 p-4">
+                        <p class="text-2xl font-extrabold text-stoneblue-900">02</p>
+                        <p class="mt-2 text-sm font-semibold text-slate-700">Recover irregular text layout on damaged stone.</p>
+                    </div>
+                    <div class="rounded-2xl bg-slate-50 p-4">
+                        <p class="text-2xl font-extrabold text-stoneblue-900">03</p>
+                        <p class="mt-2 text-sm font-semibold text-slate-700">Support expert transcription with low-resource OCR.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="details" class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <i class="fa-solid fa-triangle-exclamation text-xl text-sandstone-500"></i>
+                <h3 class="mt-4 font-bold text-slate-950">Challenge</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Low contrast, cracks, missing strokes, biological weathering, and relief shadows obscure the carved script.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <i class="fa-solid fa-database text-xl text-sandstone-500"></i>
+                <h3 class="mt-4 font-bold text-slate-950">Data curation</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Images are organized with metadata for source, surface quality, inscription visibility, and annotation confidence.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <i class="fa-solid fa-pen-ruler text-xl text-sandstone-500"></i>
+                <h3 class="mt-4 font-bold text-slate-950">Annotation</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">The pipeline targets inscription masks, line polygons, glyph candidates, and expert-verifiable transcription units.</p>
+            </div>
+            <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <i class="fa-solid fa-scale-balanced text-xl text-sandstone-500"></i>
+                <h3 class="mt-4 font-bold text-slate-950">Evaluation</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Results will report visual quality, segmentation accuracy, recognition behavior, and epigrapher review feedback.</p>
+            </div>
+        </section>
+
+        <section id="method" class="mt-10 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-soft md:p-10">
+            <div class="flex flex-col gap-3 border-b border-slate-100 pb-7 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <p class="text-sm font-extrabold uppercase tracking-[0.24em] text-stoneblue-500">Methodology</p>
+                    <h2 class="mt-2 font-serif text-3xl font-bold text-slate-950">Clean, reproducible analysis pipeline</h2>
+                </div>
+                <p class="max-w-2xl text-sm leading-6 text-slate-500">Inspired by modern computer vision project pages: concise claims, visible data context, and transparent status without overstating publication acceptance.</p>
+            </div>
+
+            <div class="mt-8 space-y-8">
+                <div class="grid gap-5 md:grid-cols-[12rem_1fr]">
+                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Stage 1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-950">Image enhancement and surface normalization</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Stone inscriptions combine pigment-like intensity variation with true geometric depth. The enhancement stage studies contrast-limited preprocessing, shadow reduction, local texture filtering, and learned restoration to separate carved strokes from stone grain and lighting artifacts.</p>
+                    </div>
+                </div>
+                <div class="grid gap-5 md:grid-cols-[12rem_1fr]">
+                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Stage 2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-950">Layout analysis on non-paper documents</h3>
+                        <p class="mt-3 leading-7 text-slate-600">Unlike printed pages, inscriptions may follow damaged baselines, wrap around cracks, or disappear at broken edges. The layout module focuses on inscription region detection, line grouping, polygon boundaries, and confidence maps that make uncertain areas easy to inspect.</p>
+                    </div>
+                </div>
+                <div class="grid gap-5 md:grid-cols-[12rem_1fr]">
+                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Stage 3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-950">Low-resource Khmer script recognition</h3>
+                        <p class="mt-3 leading-7 text-slate-600">The recognition stage considers historical variation across centuries and the limited availability of labeled examples. Candidate approaches include metric learning, synthetic augmentation, self-supervised visual pretraining, and expert-in-the-loop correction for ambiguous glyphs.</p>
+                    </div>
+                </div>
+                <div class="grid gap-5 md:grid-cols-[12rem_1fr]">
+                    <div class="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">Stage 4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-950">Human-centered research outputs</h3>
+                        <p class="mt-3 leading-7 text-slate-600">The intended outputs are not only predicted text strings. The project prioritizes readable overlays, uncertainty visualization, structured metadata, and exportable annotations so historians and epigraphers can verify every decision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-10 grid gap-6 lg:grid-cols-2">
+            <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <h2 class="font-serif text-2xl font-bold text-slate-950">Research team</h2>
+                <div class="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Nimol Thuon</p><p class="text-sm text-slate-500">Project lead and methodology design</p></div>
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Jun Du</p><p class="text-sm text-slate-500">Principal investigator</p></div>
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Panhapin Theang</p><p class="text-sm text-slate-500">Data preparation and annotations</p></div>
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Thuon Ranysakol</p><p class="text-sm text-slate-500">Data validation</p></div>
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Cheam Darith</p><p class="text-sm text-slate-500">Khmer epigraphy</p></div>
+                    <div class="rounded-2xl bg-slate-50 p-4"><p class="font-bold text-slate-900">Wang Zhangrui</p><p class="text-sm text-slate-500">Methodology and experiments</p></div>
+                </div>
+            </div>
+            <div class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <h2 class="font-serif text-2xl font-bold text-slate-950">Collaborating institutions</h2>
+                <div class="mt-6 space-y-4">
+                    <div class="flex items-start gap-4 rounded-2xl bg-slate-50 p-4"><i class="fa-solid fa-building-columns mt-1 text-stoneblue-500"></i><div><p class="font-bold text-slate-900">NERC-SLIP</p><p class="text-sm text-slate-500">China</p></div></div>
+                    <div class="flex items-start gap-4 rounded-2xl bg-slate-50 p-4"><i class="fa-solid fa-building-columns mt-1 text-stoneblue-500"></i><div><p class="font-bold text-slate-900">Université Paris Cité</p><p class="text-sm text-slate-500">France</p></div></div>
+                    <div class="flex items-start gap-4 rounded-2xl bg-slate-50 p-4"><i class="fa-solid fa-building-columns mt-1 text-stoneblue-500"></i><div><p class="font-bold text-slate-900">Paragon International University</p><p class="text-sm text-slate-500">Cambodia</p></div></div>
+                    <div class="flex items-start gap-4 rounded-2xl bg-slate-50 p-4"><i class="fa-solid fa-landmark mt-1 text-stoneblue-500"></i><div><p class="font-bold text-slate-900">Angkor National Museum</p><p class="text-sm text-slate-500">Cambodia</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-10 rounded-[2rem] border border-stoneblue-100 bg-stoneblue-900 p-6 text-white shadow-soft md:p-8">
+            <div class="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+                <div>
+                    <h2 class="font-serif text-2xl font-bold">Keywords</h2>
+                    <p class="mt-3 leading-7 text-stoneblue-100">Khmer stone epigraphy · historical document analysis · inscription enhancement · layout analysis · OCR · low-resource script recognition · cultural heritage AI</p>
+                </div>
+                <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-bold text-stoneblue-900 transition hover:bg-sandstone-100">
+                    Discuss this project <i class="fa-solid fa-envelope ml-2"></i>
                 </a>
             </div>
-        </article>
+        </section>
+    </main>
 
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-10 mt-12 text-center">
+    <footer class="border-t border-slate-200 bg-white py-10 text-center">
         <p class="text-sm font-medium text-slate-500">&copy; <span id="year"></span> Nimol Thuon. All Rights Reserved.</p>
     </footer>
 
