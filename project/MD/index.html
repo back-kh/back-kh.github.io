@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document Understanding for Non-Latin Low-Resource Documents - Nimol Thuon</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Merriweather -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         tailwind.config = {
             theme: {
@@ -30,6 +26,9 @@
                             700: '#4338ca',
                             900: '#312e81',
                         }
+                    },
+                    boxShadow: {
+                        soft: '0 24px 70px -35px rgba(15, 23, 42, 0.35)',
                     }
                 }
             }
@@ -37,23 +36,24 @@
     </script>
     <style>
         body {
-            background-color: #f8fafc;
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 40px 40px;
+            background:
+                radial-gradient(circle at top left, rgba(99, 102, 241, 0.13), transparent 32rem),
+                linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #f8fafc 100%);
         }
     </style>
 </head>
 <body class="text-slate-700 font-sans antialiased selection:bg-brand-100 selection:text-brand-900">
-
-    <!-- Top Navigation Bar -->
-    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-200/60">
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-200/70">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-500 to-indigo-700 text-white flex items-center justify-center font-bold font-serif shadow-sm">NT</div>
-                </div>
-                <div class="flex items-center">
-                    <a href="index.html" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium rounded-lg transition-colors">
+                <a href="../../index.html" class="flex items-center gap-3 group" aria-label="Go to Nimol Thuon's profile">
+                    <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-brand-500 to-indigo-700 text-white flex items-center justify-center font-bold font-serif shadow-sm">NT</div>
+                    <span class="hidden sm:block text-sm font-bold text-slate-800 group-hover:text-brand-700 transition-colors">Nimol Thuon</span>
+                </a>
+                <div class="flex items-center gap-2">
+                    <a href="#paper-1" class="hidden sm:inline-flex px-3 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700 transition-colors">Paper 1</a>
+                    <a href="#paper-2" class="hidden sm:inline-flex px-3 py-2 text-sm font-semibold text-slate-600 hover:text-brand-700 transition-colors">Paper 2</a>
+                    <a href="../../index.html" class="inline-flex items-center px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold rounded-xl transition-colors">
                         <i class="fa-solid fa-arrow-left mr-2"></i> Back to Profile
                     </a>
                 </div>
@@ -61,221 +61,224 @@
         </div>
     </nav>
 
-    <!-- Main Project Content -->
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        
-        <!-- Project Header -->
-        <header class="mb-12 text-center md:text-left">
-            <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-                <span class="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Document Understanding</span>
-                <span class="px-3 py-1 bg-blue-50 border border-blue-100 text-blue-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Layout Analysis</span>
-                <span class="px-3 py-1 bg-pink-50 border border-pink-100 text-pink-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Visual VQA</span>
-                <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs rounded-full font-bold uppercase tracking-wider shadow-sm">Low-Resource</span>
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+        <header class="bg-white/85 backdrop-blur-sm border border-white shadow-soft rounded-[2rem] p-6 md:p-10 mb-10 overflow-hidden relative">
+            <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-brand-100 blur-2xl opacity-70"></div>
+            <div class="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center">
+                <div>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs rounded-full font-bold uppercase tracking-wider">Document Understanding</span>
+                        <span class="px-3 py-1 bg-blue-50 border border-blue-100 text-blue-700 text-xs rounded-full font-bold uppercase tracking-wider">Layout Analysis</span>
+                        <span class="px-3 py-1 bg-pink-50 border border-pink-100 text-pink-700 text-xs rounded-full font-bold uppercase tracking-wider">Visual VQA</span>
+                        <span class="px-3 py-1 bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs rounded-full font-bold uppercase tracking-wider">Low-Resource Languages</span>
+                    </div>
+                    <h1 class="text-3xl md:text-5xl font-bold text-slate-950 font-serif leading-tight mb-6">
+                        Document Understanding for Non-Latin Low-Resource Documents
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+                        This project studies how machines can read, locate, and answer questions from real-world documents written in complex scripts. The focus is on low-resource and non-Latin languages, especially <strong class="text-slate-900">Khmer, Burmese, Lao, Chinese, and Japanese</strong>, where OCR errors, sparse datasets, and layout variation still limit reliable document AI.
+                    </p>
+                    <div class="mt-7 flex flex-wrap gap-3">
+                        <a href="#paper-2" class="inline-flex items-center px-5 py-3 bg-brand-600 text-white hover:bg-brand-700 rounded-xl text-sm font-bold transition-colors shadow-sm">
+                            Explore VQA Work <i class="fa-solid fa-arrow-down ml-2"></i>
+                        </a>
+                        <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center px-5 py-3 bg-white text-slate-700 hover:text-brand-700 border border-slate-200 rounded-xl text-sm font-bold transition-colors shadow-sm">
+                            Contact for Collaboration <i class="fa-regular fa-envelope ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-950 rounded-3xl p-6 text-white shadow-soft">
+                    <p class="text-xs font-bold uppercase tracking-[0.22em] text-brand-100 mb-4">Research Goal</p>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-table-cells-large text-brand-100 mt-1"></i>
+                            <p class="text-sm leading-relaxed text-slate-200">Detect document regions, reading order, tables, key-value pairs, and form fields in native-script documents.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-comments text-brand-100 mt-1"></i>
+                            <p class="text-sm leading-relaxed text-slate-200">Build multimodal VQA systems that answer layout-dependent questions from text, visual cues, and spatial relationships.</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fa-solid fa-shield-halved text-brand-100 mt-1"></i>
+                            <p class="text-sm leading-relaxed text-slate-200">Reduce bias, data leakage, and evaluation shortcuts that can overstate performance for low-resource languages.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 font-serif leading-tight mb-6">
-                Document Understanding for Non-Latin Low-Resource Documents
-            </h1>
-            
-            <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto md:mx-0">
-                Building robust document-understanding tools to facilitate accurate information extraction and retrieval for complex, non-Latin scripts. This research targets critical gaps in multimodal document analysis, specifically focusing on <strong class="text-slate-800">Khmer, Burmese, Lao, Chinese, and Japanese</strong> documents.
-            </p>
         </header>
 
-        <!-- Collaborations & Team Section -->
-        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 mb-10">
-            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-100 pb-3">Project Consortium & Contributors</h3>
-            
+        <section class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 mb-10">
+            <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6 border-b border-slate-100 pb-3">Project Consortium & Contributors</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Research Team -->
                 <div>
-                    <h4 class="text-slate-800 font-semibold mb-4 flex items-center">
-                        <i class="fa-solid fa-users text-brand-500 mr-2"></i> Research Team
-                    </h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-xs">NT</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Nimol Thuon</p>
-                                <p class="text-xs text-slate-500">Project Lead & Methodology Design</p>
-                            </div>
+                    <h3 class="text-slate-900 font-bold mb-4 flex items-center"><i class="fa-solid fa-users text-brand-500 mr-2"></i> Research Team</h3>
+                    <ul class="grid sm:grid-cols-2 gap-3">
+                        <li class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-100 p-3">
+                            <div class="w-9 h-9 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-xs">NT</div>
+                            <div><p class="text-sm font-bold text-slate-800">Nimol Thuon</p><p class="text-xs text-slate-500">Project Lead & Methodology Design</p></div>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">JD</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Jun Du</p>
-                                <p class="text-xs text-slate-500">Principal Investigator</p>
-                            </div>
+                        <li class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-100 p-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-xs">JD</div>
+                            <div><p class="text-sm font-bold text-slate-800">Jun Du</p><p class="text-xs text-slate-500">Principal Investigator</p></div>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">PT</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Panhapin Theang</p>
-                                <p class="text-xs text-slate-500">Data Preparation and Annotations</p>
-                            </div>
+                        <li class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-100 p-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-xs">PT</div>
+                            <div><p class="text-sm font-bold text-slate-800">Panhapin Theang</p><p class="text-xs text-slate-500">Data Preparation & Annotations</p></div>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center font-bold text-xs">WZ</div>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Wang Zhangrui</p>
-                                <p class="text-xs text-slate-500">Methodology and Experiments</p>
-                            </div>
+                        <li class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-100 p-3">
+                            <div class="w-9 h-9 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-xs">WZ</div>
+                            <div><p class="text-sm font-bold text-slate-800">Wang Zhangrui</p><p class="text-xs text-slate-500">Methodology & Experiments</p></div>
                         </li>
                     </ul>
                 </div>
-
-                <!-- Institutions -->
                 <div>
-                    <h4 class="text-slate-800 font-semibold mb-4 flex items-center">
-                        <i class="fa-solid fa-building-columns text-brand-500 mr-2"></i> Collaborating Institutions
-                    </h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">NERC-SLIP (USTC)</p>
-                                <p class="text-xs text-slate-500">China</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3 bg-slate-50 p-3 rounded-lg border border-slate-100">
-                            <i class="fa-solid fa-landmark text-slate-400 mt-0.5"></i>
-                            <div>
-                                <p class="text-sm font-bold text-slate-800">Université Paris Cité</p>
-                                <p class="text-xs text-slate-500">France</p>
-                            </div>
-                        </li>
-                    </ul>
+                    <h3 class="text-slate-900 font-bold mb-4 flex items-center"><i class="fa-solid fa-building-columns text-brand-500 mr-2"></i> Collaborating Institutions</h3>
+                    <div class="grid gap-3">
+                        <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <i class="fa-solid fa-landmark text-slate-400 mt-1"></i>
+                            <div><p class="text-sm font-bold text-slate-800">NERC-SLIP (USTC)</p><p class="text-xs text-slate-500">China</p></div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                            <i class="fa-solid fa-landmark text-slate-400 mt-1"></i>
+                            <div><p class="text-sm font-bold text-slate-800">Université Paris Cité</p><p class="text-xs text-slate-500">France</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Project Overview & Existing Work -->
-        <article class="bg-white p-8 md:p-10 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 mb-10">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 font-serif border-b border-slate-100 pb-4">Paper 1: Layout Analysis</h2>
-            
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-6">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-2 py-1 rounded">Published Research</span>
+        <article id="paper-1" class="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-100 mb-10">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 border-b border-slate-100 pb-4">
+                <h2 class="text-2xl font-bold text-slate-950 font-serif">Paper 1: Layout Analysis</h2>
+                <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full">Published Research</span>
+            </div>
+            <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
+                <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white">
+                    <img src="Fig1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x500/eef2ff/4f46e5?text=KH-FUNSD+Dataset+Sample';" alt="KH-FUNSD Dataset Overview" class="w-full h-auto object-cover">
                 </div>
-                <h3 class="text-xl font-bold text-slate-800 mb-3">KH-FUNSD: A Hierarchical and Fine-Grained Layout Analysis Dataset</h3>
-                <p class="text-slate-600 leading-relaxed mb-4">
-                    To establish a foundation for low-resource document understanding, we developed <strong class="text-slate-800">KH-FUNSD</strong>. This dataset addresses the severe lack of resources for analyzing the spatial layout of Khmer business documents. 
-                </p>
-
-                <!-- Added Figure -->
-                <div class="my-6 rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
-                    <img src="Fig1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/800x400/eef2ff/4f46e5?text=KH-FUNSD+Dataset+Sample';" alt="KH-FUNSD Dataset Overview" class="w-full h-auto object-cover max-h-96">
-                </div>
-
-                <p class="text-slate-600 leading-relaxed">
-                    Unlike standard Latin documents, Khmer scripts present unique challenges due to zero-width spacing, complex consonant clusters, and distinct typographical structures. KH-FUNSD provides a hierarchical, fine-grained annotation schema that allows deep learning models to accurately perform structural layout analysis (identifying headers, key-value pairs, lists, and tables) in highly complex business forms.
-                </p>
-
-                <!-- Action Buttons for Paper and GitHub -->
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="https://arxiv.org/abs/2512.11849" target="_blank" class="inline-flex items-center px-4 py-2 bg-brand-600 text-white hover:bg-brand-700 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-                        <i class="fa-regular fa-file-pdf mr-2"></i> Read Paper (arXiv)
-                    </a>
-                    <a href="https://github.com/back-kh/KH-FUNSD" target="_blank" class="inline-flex items-center px-4 py-2 bg-slate-800 text-white hover:bg-slate-900 rounded-lg text-sm font-semibold transition-colors shadow-sm">
-                        <i class="fa-brands fa-github mr-2"></i> GitHub Repository
-                    </a>
+                <div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">KH-FUNSD: A Hierarchical and Fine-Grained Layout Analysis Dataset</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        KH-FUNSD establishes a foundation for Khmer document understanding by addressing the lack of annotated resources for business-document layout analysis. It supports fine-grained modeling of document structure, including headers, lists, tables, form fields, and key-value relationships.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Unlike many Latin-script benchmarks, Khmer documents include zero-width spacing, dense consonant clusters, and varied typography. These features make region detection, reading-order recovery, and structural parsing more difficult for models trained mostly on English or other high-resource data.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://arxiv.org/abs/2512.11849" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 bg-brand-600 text-white hover:bg-brand-700 rounded-xl text-sm font-semibold transition-colors shadow-sm">
+                            <i class="fa-regular fa-file-pdf mr-2"></i> Read Paper (arXiv)
+                        </a>
+                        <a href="https://github.com/back-kh/KH-FUNSD" target="_blank" rel="noopener" class="inline-flex items-center px-4 py-2 bg-slate-900 text-white hover:bg-slate-800 rounded-xl text-sm font-semibold transition-colors shadow-sm">
+                            <i class="fa-brands fa-github mr-2"></i> GitHub Repository
+                        </a>
+                    </div>
                 </div>
             </div>
         </article>
 
-        <!-- Current Directions: Paper 2 -->
-        <article class="bg-white p-8 md:p-10 rounded-3xl shadow-[0_0_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 mb-10 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-50 rounded-bl-full -z-10 opacity-50"></div>
-            
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 font-serif border-b border-slate-100 pb-4">Paper 2: Multimodal Visual Question Answering (VQA)</h2>
-
-            <div class="mb-8">
-                <!-- Under Review Notice -->
-                <div class="flex items-start sm:items-center gap-3 mb-6 bg-blue-50/80 border border-blue-100 p-4 rounded-xl shadow-sm">
-                    <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-md shrink-0 flex items-center mt-0.5 sm:mt-0">
-                        <i class="fa-solid fa-file-signature mr-1.5"></i> Under Review
-                    </span>
-                    <span class="text-sm font-medium text-slate-700 leading-snug">2 papers detailing our multimodal Visual VQA framework for low-resource languages are currently under peer review.</span>
+        <article id="paper-2" class="bg-white p-6 md:p-10 rounded-3xl shadow-sm border border-slate-100 mb-10 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-44 h-44 bg-pink-50 rounded-bl-full -z-0 opacity-80"></div>
+            <div class="relative">
+                <div class="flex flex-wrap items-center justify-between gap-3 mb-6 border-b border-slate-100 pb-4">
+                    <h2 class="text-2xl font-bold text-slate-950 font-serif">Paper 2: Multimodal Visual Question Answering (VQA)</h2>
+                    <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1.5 rounded-full"><i class="fa-solid fa-file-signature mr-1.5"></i> Under Review</span>
                 </div>
 
-                <h3 class="text-xl font-bold text-slate-800 mb-4">Architecture & Methodology</h3>
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    Building upon our success in layout analysis, the current frontier of this research shifts towards <strong class="text-slate-800">Visual Question Answering (VQA)</strong> on multimodal documents. We are engineering systems that do not merely parse document structure, but genuinely "understand" the semantic relationships between text, spatial layout, and visual elements in non-Latin documents.
-                </p>
-
-                <!-- Architecture Figure Placeholder for Paper 2 -->
-                <div class="my-8 rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
-                    <img src="Fig2_VQA_Architecture.jpg" onerror="this.onerror=null;this.src='https://placehold.co/900x450/f8fafc/334155?text=Multimodal+VQA+Architecture+Diagram';" alt="Multimodal VQA Architecture" class="w-full h-auto object-cover max-h-[500px] rounded-lg">
-                    <p class="text-center text-xs text-slate-500 mt-3 mb-2 font-medium">Proposed Multimodal Fusion Architecture for Non-Latin Document VQA.</p>
+                <div class="bg-blue-50/80 border border-blue-100 p-5 rounded-2xl mb-8">
+                    <p class="text-sm font-medium text-slate-700 leading-relaxed">
+                        Two papers detailing our multimodal Visual VQA framework for low-resource languages are currently under peer review. This page summarizes the motivation, core problems, and research direction without releasing unpublished experimental details.
+                    </p>
                 </div>
 
-                <div class="space-y-6">
-                    <!-- Technical Detail 1 -->
+                <div class="grid lg:grid-cols-[1fr_0.95fr] gap-8 items-start mb-10">
                     <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-layer-group text-brand-500"></i> Spatial-Aware Multimodal Fusion
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                            Traditional NLP models fail on visually-rich documents because they process text as a 1D sequence. Our framework employs a multi-stream architecture that dynamically fuses <strong>visual embeddings</strong> (extracted via Vision Transformers from document images), <strong>linguistic embeddings</strong> (from multilingual encoders adapted for complex tokenization), and <strong>spatial coordinates</strong> (bounding box geometries). This allows the model to answer layout-dependent queries, such as reading values from specific columns in a Khmer or Lao table.
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">Why VQA is difficult for low-resource documents</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            Document VQA asks a system to answer questions such as “What is the invoice total?”, “Which date belongs to this field?”, or “What value is in the third row of the Lao table?”. For low-resource languages, the problem is harder because the model must combine imperfect OCR, document layout, visual cues, and language understanding at the same time.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed">
+                            High-resource benchmarks often hide these difficulties: they have cleaner scans, stronger OCR, more public datasets, and more pretrained language coverage. Khmer, Burmese, and Lao documents receive less research attention, so evaluation must be designed carefully to avoid inflated scores and to measure true document comprehension.
                         </p>
                     </div>
-
-                    <!-- Technical Detail 2 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-language text-brand-500"></i> Addressing Low-Resource Typographical Complexity
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                            Scripts like Khmer, Burmese, and Lao utilize non-linear writing systems where vowels and diacritics stack above, below, or around base consonants. Our research introduces specialized cross-attention mechanisms that handle these zero-width characters and complex syllable boundaries without losing spatial context, a severe limitation in current state-of-the-art multi-modal models trained predominantly on Latin documents.
-                        </p>
-                    </div>
-
-                    <!-- Technical Detail 3 -->
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-magnifying-glass-chart text-brand-500"></i> Cross-lingual Document Retrieval
-                        </h4>
-                        <p class="text-slate-600 leading-relaxed text-sm pl-7">
-                            Beyond direct question answering, the embedded multimodal representations are being leveraged to enhance cross-lingual search. This capability aims to dramatically improve search engines' ability to retrieve specific data points, invoices, or forms directly from scanned native-script PDFs across Southeast Asian languages.
-                        </p>
+                    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white p-2">
+                        <img src="Fig2_VQA_Architecture.jpg" onerror="this.onerror=null;this.src='https://placehold.co/900x560/f8fafc/334155?text=Multimodal+VQA+Architecture+Diagram';" alt="Multimodal VQA Architecture" class="w-full h-auto object-cover rounded-xl">
+                        <p class="text-center text-xs text-slate-500 mt-3 mb-1 font-medium">Proposed multimodal fusion direction for non-Latin document VQA.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- Coming Soon Banner -->
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mt-8 shadow-sm">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0">
+                <div class="grid md:grid-cols-2 gap-4 mb-10">
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                        <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2"><i class="fa-solid fa-database text-brand-500"></i> Lacking and leaking resources</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Low-resource languages have few annotated document VQA datasets, limited OCR ground truth, and inconsistent fonts. At the same time, small datasets are vulnerable to leakage, where repeated templates, copied questions, or near-duplicate pages can enter both training and testing and make results look stronger than they are.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                        <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2"><i class="fa-solid fa-language text-brand-500"></i> Complex scripts and tokenization</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Khmer, Burmese, and Lao use stacked marks, syllable-level composition, and spacing conventions that differ from Latin scripts. A single visual word can be split incorrectly by OCR or tokenizers, causing the model to miss the entity needed for an answer.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                        <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2"><i class="fa-solid fa-location-crosshairs text-brand-500"></i> Layout-grounded reasoning</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Many answers depend on where text appears, not only what it says. The model must align OCR tokens, bounding boxes, visual regions, table cells, checkboxes, stamps, and handwritten marks to avoid confusing similar fields across the page.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5">
+                        <h4 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-brand-500"></i> Low research attention</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">Non-Latin low-resource languages are often underrepresented in document AI benchmarks and pretrained models. This creates weaker baselines, fewer reusable tools, and less community feedback for practical problems faced by local institutions.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Methodology direction</h3>
+                <div class="space-y-5">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0"><i class="fa-solid fa-layer-group"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">Spatial-aware multimodal fusion</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">The framework combines visual embeddings from document images, language embeddings from multilingual encoders, and geometric features from bounding boxes so answers can be grounded in both content and location.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">Leakage-resistant evaluation</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">The evaluation plan separates document templates, question types, and visual styles where possible. This helps test whether the system generalizes to unseen documents instead of memorizing frequent forms or repeated answer patterns.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 rounded-2xl bg-brand-50 text-brand-700 flex items-center justify-center shrink-0"><i class="fa-solid fa-globe-asia"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 mb-1">Cross-lingual document retrieval</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">Beyond direct question answering, the learned multimodal representations can support search across scanned native-script PDFs, invoices, forms, and administrative records in Southeast Asian languages.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-2xl mt-10 shadow-sm">
+                    <div class="flex items-start">
                         <i class="fa-solid fa-flask text-amber-500 text-2xl mt-1"></i>
-                    </div>
-                    <div class="ml-4">
-                        <h3 class="text-lg font-bold text-amber-800">Research in Progress (Coming soon...)</h3>
-                        <p class="mt-2 text-amber-700 leading-relaxed text-sm">
-                            The advanced framework for Visual VQA and comprehensive Layout Analysis across Khmer, Lao, and Burmese is currently in active development. New datasets, methodology benchmarks, and the corresponding publications are <strong>coming soon by the authors</strong> once peer review is finalized.
-                        </p>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-amber-800">Research in progress</h3>
+                            <p class="mt-2 text-amber-700 leading-relaxed text-sm">
+                                The Visual VQA framework and broader layout-analysis benchmarks for Khmer, Lao, and Burmese are in active development. Datasets, methodology details, and publication links will be added after peer review is finalized.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </article>
 
-        <!-- Author Contact Block -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <section class="bg-slate-950 text-white p-6 rounded-3xl shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
-                <img src="pics/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eef2ff/4f46e5?text=NT';" alt="Nimol Thuon" class="w-12 h-12 rounded-full border-2 border-slate-200 object-cover">
+                <img src="../../pics/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/100x100/eef2ff/4f46e5?text=NT';" alt="Nimol Thuon" class="w-14 h-14 rounded-2xl border-2 border-white/20 object-cover">
                 <div>
-                    <p class="text-sm font-bold text-slate-900">Nimol Thuon</p>
-                    <p class="text-xs text-slate-500">Project Lead</p>
+                    <p class="text-sm font-bold">Nimol Thuon</p>
+                    <p class="text-xs text-slate-300">Project Lead · Document Understanding for Low-Resource Languages</p>
                 </div>
             </div>
-            <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center px-6 py-2.5 bg-brand-50 hover:bg-brand-600 text-brand-700 hover:text-white text-sm font-semibold rounded-xl transition-colors shadow-sm">
+            <a href="mailto:nimol.thn@gmail.com" class="inline-flex items-center px-6 py-3 bg-white hover:bg-brand-50 text-slate-950 text-sm font-bold rounded-xl transition-colors shadow-sm">
                 Contact for Collaboration <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
-        </div>
+        </section>
+    </main>
 
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-10 mt-12 text-center">
+    <footer class="bg-white/80 border-t border-slate-200 py-10 mt-12 text-center">
         <p class="text-sm font-medium text-slate-500">&copy; <span id="year"></span> Nimol Thuon. All Rights Reserved.</p>
     </footer>
 
