@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Project page for Ancient Khmer Stone Inscription Analysis by Nimol Thuon.">
     <title>Ancient Khmer Stone Inscription Analysis | Nimol Thuon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -54,7 +54,7 @@
             background: repeating-linear-gradient(135deg, rgba(199,149,77,0.12) 0, rgba(199,149,77,0.12) 1px, transparent 1px, transparent 10px);
         }
     </style>
-</head>
+<link rel="stylesheet" href="../project-updates.css"><script src="../project-interactions.js" defer></script><link rel="canonical" href="https://back-kh.github.io/KSI/index.html"></head>
 <body class="font-sans text-slate-700 antialiased selection:bg-sandstone-100 selection:text-stoneblue-900">
     <nav class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -66,7 +66,7 @@
                 </div>
             </a>
             <div class="flex items-center gap-2 text-sm font-semibold">
-                <a href="#method" class="hidden rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 md:inline-flex">Method</a>
+                <a href="#research-updates" class="rounded-full px-3 py-2 text-sm font-semibold text-slate-700">Papers</a><a href="#method" class="hidden rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 md:inline-flex">Method</a>
                 <a href="#details" class="hidden rounded-full px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 md:inline-flex">Details</a>
                 <a href="../index.html" class="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-slate-700 shadow-sm transition hover:border-stoneblue-200 hover:bg-stoneblue-50 hover:text-stoneblue-900">
                     <i class="fa-solid fa-arrow-left mr-2"></i> Profile
@@ -102,7 +102,7 @@
 
             <figure class="paper-card overflow-hidden rounded-[2rem] border border-slate-200 shadow-soft">
                 <div class="figure-frame p-3">
-                    <img src="../pics/photo_2026-05-06_23-00-36.jpg" alt="Collage of Khmer temple reliefs and stone inscriptions used as visual context for the project" class="h-auto w-full rounded-[1.45rem] object-cover shadow-sm">
+                    <img src="https://back-kh.github.io/pics/photo_2026-05-06_23-00-36.jpg" alt="Collage of Khmer temple reliefs and stone inscriptions used as visual context for the project" class="h-auto w-full rounded-[1.45rem] object-cover shadow-sm">
                 </div>
                 <figcaption class="border-t border-slate-100 bg-white px-5 py-4 text-sm leading-6 text-slate-500">
                     Visual context from Khmer heritage sites: weathered stone surfaces, carved reliefs, and inscription fragments motivate robust enhancement, segmentation, and recognition methods.
@@ -110,16 +110,42 @@
             </figure>
         </section>
 
-        <section id="overview" class="mt-14 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+        <section class="project-paper-updates" id="research-updates" aria-labelledby="research-updates-title"><div class="project-update-heading"><p class="project-update-kicker">RESEARCH IN FOCUS / 2026</p><h2 id="research-updates-title">Inside the research.</h2><p class="project-update-description">Complementary studies examine Khmer stone inscription analysis and the visual condition of Khmer stone heritage objects.</p><nav class="paper-jump-links" aria-label="Explore recent papers"><a href="#paper-ksi">Angkorian-KSI <span aria-hidden="true">↓</span></a><a href="#paper-heritage">Angkorian-HeritageObj <span aria-hidden="true">↓</span></a></nav></div><article class="project-paper" id="paper-ksi">
+      <header class="paper-story-heading"><div class="paper-story-index" aria-hidden="true">01</div><div><p class="project-paper-venue">2026 · ICDAR 2026 · Vienna, Austria · Springer</p><p class="paper-story-field">Stone inscriptions · Benchmark</p><h3><a href="https://link.springer.com/chapter/10.1007/978-3-032-36039-7_23">Angkorian-KSI: A Multi-task Benchmark for Khmer Stone Inscription Analysis</a></h3><p class="project-paper-authors"><strong>Nimol Thuon</strong>, Jun Du, Ranysakol Thuon, Panhapin Theang</p></div></header>
+      <p class="paper-research-question">How can we recover structure from weathered stone?</p>
+      <dl class="paper-metrics"><div><dt>full inscription images</dt><dd>230</dd></div><div><dt>annotated text lines</dt><dd>2,733</dd></div><div><dt>benchmark tasks</dt><dd>3</dd></div></dl>
+      <div class="paper-gallery" data-paper-gallery><div class="paper-figure-controls" role="group" aria-label="Figures for Angkorian-KSI" hidden><button type="button" data-figure-choice="0" aria-pressed="true" aria-controls="figure-ksi-0">Benchmark design</button><button type="button" data-figure-choice="1" aria-pressed="false" aria-controls="figure-ksi-1">Annotation examples</button></div><figure class="paper-figure" id="figure-ksi-0"><a href="../assets/papers/ksi-benchmark-pipeline.jpg" data-enlarge-figure aria-label="Enlarge figure: Benchmark design"><img src="../assets/papers/ksi-benchmark-pipeline.webp" width="2400" height="1045" alt="Angkorian-KSI collection workflow and the layout, binarization, and period-classification tasks" loading="lazy" decoding="async"><span class="figure-enlarge" aria-hidden="true">Enlarge figure ↗</span></a><figcaption><span>Figure 3 · Collection, annotation, and the three task pathways.</span><a href="https://github.com/back-kh/Angkorian-KSI">Official paper repository ↗</a></figcaption></figure><figure class="paper-figure" id="figure-ksi-1"><a href="../assets/papers/ksi-annotations.jpg" data-enlarge-figure aria-label="Enlarge figure: Annotation examples"><img src="../assets/papers/ksi-annotations.webp" width="2340" height="684" alt="Stone inscription examples with text-region, text-line, mask, and script-period annotations" loading="lazy" decoding="async"><span class="figure-enlarge" aria-hidden="true">Enlarge figure ↗</span></a><figcaption><span>Figure 4 · Examples of the visual evidence represented by the annotations.</span><a href="https://github.com/back-kh/Angkorian-KSI">Official paper repository ↗</a></figcaption></figure></div>
+      <div class="paper-story-notes"><section><h4>The problem</h4><p>Carved text is shaped by depth, erosion, shadows, and stone texture. Methods designed for flat documents face a different visual domain.</p></section><section><h4>The approach</h4><p>KSI-LA locates regions and lines; KSI-B extracts binary text masks; KSI-C recognizes Pre-Angkorian, Angkorian, and Post-Angkorian script periods.</p></section><section><h4>The contribution</h4><p>A shared benchmark connects these tasks and exposes the domain gap. It supports reproducible analysis and expert inspection of historical evidence.</p></section></div>
+      <aside class="paper-takeaway"><span>Research perspective</span><p>The benchmark evaluates visual analysis; historical interpretation still depends on specialist expertise.</p></aside>
+      <div class="project-paper-links"><a href="https://link.springer.com/chapter/10.1007/978-3-032-36039-7_23">Publisher <span aria-hidden="true">↗</span></a><a href="https://angkorianai.github.io/">Angkorian–AI <span aria-hidden="true">↗</span></a></div><details class="project-paper-citation"><summary>BibTeX citation</summary><p>First online in August 2026; Springer recommends a 2027 citation year. The BibTeX follows the publisher record.</p><pre>@inproceedings{thuon2027angkorian,
+  author = {Thuon, Nimol and Du, Jun and Thuon, Ranysakol and Theang, Panhapin},
+  title = {Angkorian-KSI: A Multi-task Benchmark for Khmer Stone Inscription Analysis},
+  booktitle = {Document Analysis and Recognition -- ICDAR 2026},
+  series = {Lecture Notes in Computer Science},
+  volume = {16974},
+  pages = {387--404},
+  year = {2027},
+  publisher = {Springer, Cham},
+  doi = {10.1007/978-3-032-36039-7_23}
+}</pre></details></article>
+<article class="project-paper" id="paper-heritage">
+      <header class="paper-story-heading"><div class="paper-story-index" aria-hidden="true">02</div><div><p class="project-paper-venue">2026 · ICPR 2026 · PRESTIGE · Lyon, France</p><p class="paper-story-field">Digital preservation · Visual assessment</p><h3><a href="https://www.researchgate.net/publication/413569705_Angkorian-HeritageObj_AI-Assisted_Visual_Condition_Assessment_of_Khmer_Stone_Heritage_Objects">Angkorian-HeritageObj: AI-Assisted Visual Condition Assessment of Khmer Stone Heritage Objects</a></h3><p class="project-paper-authors"><strong>Nimol Thuon</strong>, Panhapin Theang</p></div></header>
+      <p class="paper-research-question">What can a photograph tell us about visible condition?</p>
+      <ul class="paper-tags"><li>Visual features</li><li>Transfer learning</li><li>Vision-language models</li></ul>
+      <div class="paper-gallery" data-paper-gallery><div class="paper-figure-controls" role="group" aria-label="Figures for Angkorian-HeritageObj" hidden><button type="button" data-figure-choice="0" aria-pressed="true" aria-controls="figure-heritage-0">Research collection</button><button type="button" data-figure-choice="1" aria-pressed="false" aria-controls="figure-heritage-1">Model pathways</button></div><figure class="paper-figure" id="figure-heritage-0"><a href="../assets/papers/heritage-collection.jpg" data-enlarge-figure aria-label="Enlarge figure: Research collection"><img src="../assets/papers/heritage-collection.webp" width="1548" height="718" alt="Photographs of Khmer stone heritage objects showing good, moderate, and severe condition" loading="lazy" decoding="async"><span class="figure-enlarge" aria-hidden="true">Enlarge figure ↗</span></a><figcaption><span>Figure 1 · Heritage objects illustrating the three condition classes.</span><a href="https://www.researchgate.net/publication/413569705_Angkorian-HeritageObj_AI-Assisted_Visual_Condition_Assessment_of_Khmer_Stone_Heritage_Objects">Paper ↗</a></figcaption></figure><figure class="paper-figure" id="figure-heritage-1"><a href="../assets/papers/heritage-models.png" data-enlarge-figure aria-label="Enlarge figure: Model pathways"><img src="../assets/papers/heritage-models.webp" width="4088" height="2433" alt="Comparison of CLIP and DINOv2 visual features, CNN transfer learning, and vision-language prompting for stone condition assessment" loading="lazy" decoding="async"><span class="figure-enlarge" aria-hidden="true">Enlarge figure ↗</span></a><figcaption><span>Figure 2 · Three model pathways for condition labels and descriptions.</span><a href="https://www.researchgate.net/publication/413569705_Angkorian-HeritageObj_AI-Assisted_Visual_Condition_Assessment_of_Khmer_Stone_Heritage_Objects">Paper ↗</a></figcaption></figure></div>
+      <div class="paper-story-notes"><section><h4>The problem</h4><p>Khmer stone objects show varied textures, damage, and capture conditions. Consistent visual documentation is a useful starting point for preservation research.</p></section><section><h4>The approach</h4><p>The research figure contrasts CLIP/DINOv2 features, CNN transfer learning, and prompted vision-language analysis for condition labels or descriptions.</p></section><section><h4>The relevance</h4><p>These complementary pathways connect image evidence with descriptions of visible condition, creating material for expert review and further heritage analysis.</p></section></div>
+      <aside class="paper-takeaway"><span>Research perspective</span><p>Visible condition assessment supports documentation. Conservation decisions require material context and heritage expertise.</p></aside>
+      <div class="project-paper-links"><a href="https://www.researchgate.net/publication/413569705_Angkorian-HeritageObj_AI-Assisted_Visual_Condition_Assessment_of_Khmer_Stone_Heritage_Objects">Paper <span aria-hidden="true">↗</span></a><a href="https://angkorianai.github.io/">Angkorian–AI <span aria-hidden="true">↗</span></a></div></article></section>
+<section id="overview" class="mt-14 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
             <aside class="paper-card rounded-3xl border border-slate-200 p-6 shadow-soft">
                 <h2 class="text-sm font-extrabold uppercase tracking-[0.24em] text-slate-500">Project status</h2>
                 <div class="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-5">
                     <div class="flex gap-3">
                         <i class="fa-solid fa-circle-info mt-1 text-amber-600"></i>
                         <div>
-                            <h3 class="font-bold text-amber-900">Manuscript in preparation</h3>
+                            <h3 class="font-bold text-amber-900">Published research</h3>
                             <p class="mt-2 text-sm leading-6 text-amber-800">
-                                This page presents the research direction and project details only. The paper has not been accepted yet; publication venue, code release, and dataset access will be updated when they are ready.
+                                Angkorian-KSI is published in the ICDAR 2026 proceedings. The Angkorian-HeritageObj paper and the Angkorian–AI project website are linked above.
                             </p>
                         </div>
                     </div>
@@ -276,5 +302,5 @@
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-</body>
+<dialog class="figure-dialog" aria-labelledby="figure-dialog-title"><div class="figure-dialog-toolbar"><h2 id="figure-dialog-title">Research figure</h2><button type="button" data-close-figure aria-label="Close figure">×</button></div><img class="figure-dialog-image" alt=""><p class="figure-dialog-caption"></p><a class="figure-dialog-original" href="#">Open original image ↗</a></dialog></body>
 </html>
