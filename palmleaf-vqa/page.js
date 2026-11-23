@@ -8,15 +8,26 @@
   renderExample();
   category.closest('.example-picker').hidden = false;
 
-  const captions = ['Exact-match accuracy (%)', 'Mean answer F1 (%)', 'Line count within one line (%)'];
+  const captions = ['Exact-match accuracy (%)', 'Mean answer F1 (%)', 'Line count within one line (%)', 'Mean Jaccard (%)'];
   const metrics = document.querySelector('.metrics');
-  const scores = [...document.querySelectorAll('[data-scores]')];
+  const scores = [...document.querySelectorAll('.results [data-scores]')];
+  const paperScores = scores.filter(cell => !cell.closest('#new-evaluations'));
+  const paperColumns = [1, 2].map(column => paperScores.filter(cell => cell.cellIndex === column));
   const renderMetric = () => {
     const index = Number(metrics.querySelector(':checked').value);
     document.querySelector('#metric-caption').textContent = captions[index];
-    for (const cell of scores) cell.textContent = cell.dataset.scores.split(' ')[index];
-    for (const cells of [scores.filter((_, i) => i % 2 === 0), scores.filter((_, i) => i % 2 === 1)]) {
-      const best = Math.max(...cells.map(cell => Number(cell.textContent)));
+    for (const cell of scores) {
+      const value = cell.dataset.scores.split(' ')[index];
+      if (value && value !== '-') {
+        cell.textContent = value;
+        cell.removeAttribute('aria-label');
+      } else {
+        cell.textContent = '\u2014';
+        cell.setAttribute('aria-label', 'Not reported');
+      }
+    }
+    for (const cells of paperColumns) {
+      const best = Math.max(...cells.map(cell => Number(cell.textContent)).filter(Number.isFinite));
       for (const cell of cells) cell.classList.toggle('top-score', Number(cell.textContent) === best);
     }
   };

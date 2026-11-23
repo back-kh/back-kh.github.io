@@ -162,9 +162,20 @@ pre { overflow: auto; margin: 14px 0 0; padding: 17px; border: 1px solid var(--l
   .stats dt { font-size: 13px; }
   th, td { padding: 7px 10px; }
   .counts { min-width: 420px; }
-  .results { min-width: 313px; font-size: 14px; }
+  .results { table-layout: fixed; font-size: 14px; }
+  .results th, .results td { padding-inline: 8px; }
+  .results th { white-space: normal; overflow-wrap: anywhere; }
+  .results thead th { white-space: nowrap; }
+  .results thead th:nth-child(2) { width: 104px; }
+  .results thead th:nth-child(3) { width: 56px; }
   .results td { width: auto; }
-  .metrics span { padding-inline: 8px; }
+  .metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metrics span { padding-inline: 8px; text-align: center; }
+  .metrics label:first-of-type span { border-radius: 5px 0 0 0; }
+  .metrics label:nth-of-type(2) span { border-radius: 0 5px 0 0; }
+  .metrics label:nth-of-type(3) span { border-left: 1px solid #9ab3a8; border-radius: 0 0 0 5px; }
+  .metrics label:last-of-type span { border-radius: 0 0 5px 0; }
+  .metrics label:nth-of-type(n+3) span { border-top: 0; }
   .examples > div { grid-template-columns: 1fr; gap: 4px; }
 }
 @media (prefers-reduced-motion: reduce) {

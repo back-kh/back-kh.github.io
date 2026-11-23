@@ -11,8 +11,8 @@
   <meta property="og:image" content="https://back-kh.github.io/palmleaf-vqa/overview.webp">
   <meta property="og:url" content="https://back-kh.github.io/palmleaf-vqa/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="page.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261124">
+  <script src="page.js?v=20261124" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -63,7 +63,7 @@
           <div><dt>Collection groups</dt><dd>8</dd></div>
           <div><dt>Question categories</dt><dd>8</dd></div>
           <div><dt>Test images</dt><dd>278</dd></div>
-          <div><dt>Evaluated models</dt><dd>11</dd></div>
+          <div><dt>Models in the paper</dt><dd>11</dd></div>
         </dl>
       </div>
     </section>
@@ -150,12 +150,13 @@
       <div class="wrap">
         <p class="eyebrow">Quantitative evaluation</p>
         <h2 id="benchmark-title">Benchmark results</h2>
-        <p class="section-intro">The paper compares the same questions under open-answer and constrained-answer prompting. Constrained prompts specify an answer format and, where applicable, a vocabulary.</p>
+        <p class="section-intro">The paper compares the same questions under open-answer and constrained-answer prompting. Constrained prompts specify an answer format and, where applicable, a vocabulary. <a href="#new-evaluations">New evaluations</a> are listed below the paper results.</p>
         <fieldset class="metrics" hidden>
           <legend>Metric</legend>
           <label><input name="metric" value="0" type="radio" checked><span>Exact match</span></label>
           <label><input name="metric" value="1" type="radio"><span>Answer F1</span></label>
           <label><input name="metric" value="2" type="radio"><span>Line count &plusmn;1</span></label>
+          <label><input name="metric" value="3" type="radio"><span>Mean Jaccard</span></label>
         </fieldset>
         <div class="table-scroll" tabindex="0" role="region" aria-label="Model benchmark results">
           <table class="results">
@@ -181,9 +182,19 @@
               <tr><th scope="row">Llama-3.1-8B</th><td data-scores="31.65 34.05 34.35">31.65</td><td data-scores="8.00 8.00 3.96">8.00</td></tr>
               <tr><th scope="row">Llama-3.2-3B</th><td data-scores="26.26 26.26 23.92">26.26</td><td data-scores="7.91 7.91 0.00">7.91</td></tr>
             </tbody>
+            <tbody id="new-evaluations">
+              <tr class="group"><th colspan="3" scope="rowgroup">Test set results (New evaluations)</th></tr>
+              <tr><th scope="row">deepseek4.1-flash</th><td data-scores="48.92 53.25 - 51.67">48.92</td><td data-scores="27.70 28.18 - 28.06">27.70</td></tr>
+              <tr><th scope="row">qwen3.8-flash-next</th><td data-scores="49.91 56.72 - 54.63">49.91</td><td data-scores="32.37 32.58 - 32.50">32.37</td></tr>
+              <tr><th scope="row">glm-5.3-flash</th><td data-scores="48.02 54.55 - 52.52">48.02</td><td data-scores="34.44 34.55 - 34.51">34.44</td></tr>
+              <tr><th scope="row">qwen3.8-27B</th><td data-scores="44.38 49.51 - 47.72">44.38</td><td data-scores="34.76 34.77 - 34.77">34.76</td></tr>
+              <tr><th scope="row">GPT-6.2 Sol (Max)</th><td data-scores="62.37 73.87 98.20 71.53">62.37</td><td data-scores="46.27 48.07 97.48 47.36">46.27</td></tr>
+              <tr><th scope="row">GPT-6.2 Astra (Max)</th><td data-scores="59.22 69.72 98.20 67.54">59.22</td><td data-scores="48.04 49.75 97.84 49.07">48.04</td></tr>
+            </tbody>
           </table>
         </div>
-        <p class="table-note">Scores are those reported in the <a href="https://arxiv.org/abs/2609.31651">paper</a>; they have not been recalculated using the downloadable annotations. Line count &plusmn;1 measures answers within one line of the reference count.</p>
+        <p class="table-note">The paper rows are unchanged and have not been rescored on the downloadable annotations. Line count &plusmn;1 measures answers within one line of the reference count. A dash means the metric was not reported here.</p>
+        <p class="table-note"><strong>November 24, 2026:</strong> The new evaluations are separate from the <a href="https://arxiv.org/abs/2609.31651">paper</a>. The GPT-6.2 Max runs used Codex CLI with the archived prompts and original WACV test labels. Each mode scored all 2,224 answers except Astra open, which scored 2,221 after three script-identification timeouts. The other four models' scores are reported as supplied.</p>
       </div>
     </section>
 
