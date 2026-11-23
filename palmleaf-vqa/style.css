@@ -43,11 +43,8 @@ h1, h2, p, figure, dl, dd { margin: 0; }
 .venue { display: inline-block; border: 1px solid rgb(197 233 214 / 50%); border-radius: 4px; padding: 5px 12px; font-size: 14px; color: #e5f6eb; }
 h1 { color: #fff; font: 700 76px/1.03 var(--serif); margin-block: 18px 12px; overflow-wrap: anywhere; }
 .subtitle { max-width: 790px; margin-inline: auto; font-size: 22px; line-height: 1.34; color: #f1f8f4; }
-.authors, .affiliations { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 20px; }
-.authors { margin-top: 19px; font-weight: 650; font-size: 17px; }
+.authors { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 20px; margin-top: 19px; font-weight: 650; font-size: 17px; }
 .authors a { color: inherit; }
-.affiliations { margin-top: 5px; color: #e0eae4; font-size: 14px; }
-sup { font-size: 0.68em; margin-left: 2px; }
 .hero-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 24px; }
 .hero-links a, .button {
   display: inline-flex;
@@ -156,7 +153,6 @@ pre { overflow: auto; margin: 14px 0 0; padding: 17px; border: 1px solid var(--l
   .hero-content { padding-block: 27px 32px; }
   .subtitle { font-size: 17px; }
   .authors { font-size: 15px; gap: 3px 11px; margin-top: 14px; }
-  .affiliations { font-size: 13px; gap: 2px; }
   .hero-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: min(100%, 290px); margin-inline: auto; gap: 7px; margin-top: 16px; }
   .hero-links a { padding-inline: 9px; min-height: 37px; font-size: 14px; }
   h2 { font-size: 29px; }
