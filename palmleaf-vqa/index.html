@@ -11,8 +11,8 @@
   <meta property="og:image" content="https://back-kh.github.io/palmleaf-vqa/overview.webp">
   <meta property="og:url" content="https://back-kh.github.io/palmleaf-vqa/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261124">
-  <script src="page.js?v=20261124" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261124-2">
+  <script src="page.js?v=20261124-2" defer></script>
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
@@ -75,7 +75,7 @@
         <div class="prose">
           <p>Historical palm-leaf manuscripts challenge vision-language models in ways that modern printed documents do not. Faded writing, irregular layouts, binding holes, and surface damage make it difficult to judge what a manuscript image shows, even when parts of its text are legible.</p>
           <p>PalmLeaf-VQA pairs 923 manuscript images from eight South and Southeast Asian collection groups with 7,384 questions and answers. It evaluates observable properties such as line structure, physical condition, and localized features. It does not ask models to transcribe or translate manuscript text.</p>
-          <p>The study compares open and constrained prompting across proprietary models, open-weight vision-language models, and text-only controls. The best reported exact-match result is 58.00%, highlighting how difficult these visual tasks remain even when the answer format is constrained.</p>
+          <p>The study compares open and constrained prompting across proprietary models, open-weight vision-language models, and text-only controls. The best exact-match result in the paper is 58.00%, highlighting how difficult these visual tasks remain even when the answer format is constrained.</p>
         </div>
       </div>
     </section>
@@ -150,7 +150,7 @@
       <div class="wrap">
         <p class="eyebrow">Quantitative evaluation</p>
         <h2 id="benchmark-title">Benchmark results</h2>
-        <p class="section-intro">The paper compares the same questions under open-answer and constrained-answer prompting. Constrained prompts specify an answer format and, where applicable, a vocabulary. <a href="#new-evaluations">New evaluations</a> are listed below the paper results.</p>
+        <p class="section-intro" id="new-evaluations">Test-set scores under constrained and open prompting. Models marked (New) were evaluated after the paper.</p>
         <fieldset class="metrics" hidden>
           <legend>Metric</legend>
           <label><input name="metric" value="0" type="radio" checked><span>Exact match</span></label>
@@ -162,16 +162,22 @@
           <table class="results">
             <caption id="metric-caption">Exact-match accuracy (%)</caption>
             <thead><tr><th scope="col">Model</th><th scope="col">Constrained</th><th scope="col">Open</th></tr></thead>
-            <tbody>
+            <tbody data-rank="proprietary">
               <tr class="group"><th colspan="3" scope="rowgroup">Proprietary vision-language models</th></tr>
+              <tr><th scope="row">GPT-6.2 Sol (Max) <span class="new-label">(New)</span></th><td class="top-score" data-scores="62.37 73.87 98.20 71.53">62.37</td><td data-scores="46.27 48.07 97.48 47.36">46.27</td></tr>
+              <tr><th scope="row">GPT-6.2 Astra (Max) <span class="new-label">(New)</span></th><td data-scores="59.22 69.72 98.20 67.54">59.22</td><td class="top-score" data-scores="48.04 49.75 97.84 49.07">48.04</td></tr>
               <tr><th scope="row">Gemini 3.5 Flash</th><td data-scores="58.00 67.25 93.88">58.00</td><td data-scores="43.03 43.31 95.13">43.03</td></tr>
               <tr><th scope="row">ChatGPT 5.5</th><td data-scores="55.40 66.17 93.53">55.40</td><td data-scores="40.50 39.16 94.68">40.50</td></tr>
               <tr><th scope="row">Gemini 3.1 Flash Lite</th><td data-scores="47.53 58.80 74.28">47.53</td><td data-scores="39.52 39.58 75.72">39.52</td></tr>
             </tbody>
-            <tbody>
+            <tbody data-rank="open-weight">
               <tr class="group"><th colspan="3" scope="rowgroup">Open-weight vision-language models</th></tr>
+              <tr><th scope="row">Qwen3.8-Flash-Next <span class="new-label">(New)</span><small class="model-params">125B main, 6B active</small></th><td class="top-score" data-scores="49.91 56.72 - 54.63">49.91</td><td data-scores="32.37 32.58 - 32.50">32.37</td></tr>
+              <tr><th scope="row">DeepSeek-V4.1-Flash <span class="new-label">(New)</span><small class="model-params">552B backbone, 8B/16B active</small></th><td data-scores="48.92 53.25 - 51.67">48.92</td><td data-scores="27.70 28.18 - 28.06">27.70</td></tr>
+              <tr><th scope="row">GLM-5.3-Flash <span class="new-label">(New)</span><small class="model-params">320B total, 18B active</small></th><td data-scores="48.02 54.55 - 52.52">48.02</td><td data-scores="34.44 34.55 - 34.51">34.44</td></tr>
               <tr><th scope="row">InternVL3.5-4B</th><td data-scores="46.00 54.93 59.71">46.00</td><td data-scores="24.96 25.12 65.65">24.96</td></tr>
               <tr><th scope="row">InternVL3.5-8B</th><td data-scores="44.96 54.48 62.05">44.96</td><td data-scores="24.78 25.02 61.51">24.78</td></tr>
+              <tr><th scope="row">Qwen3.8-27B <span class="new-label">(New)</span><small class="model-params">27B dense</small></th><td data-scores="44.38 49.51 - 47.72">44.38</td><td class="top-score" data-scores="34.76 34.77 - 34.77">34.76</td></tr>
               <tr><th scope="row">Qwen3-VL-8B</th><td data-scores="44.02 54.73 71.22">44.02</td><td data-scores="21.49 21.80 68.60">21.49</td></tr>
               <tr><th scope="row">Qwen2.5-VL-3B</th><td data-scores="35.21 41.71 56.29">35.21</td><td data-scores="15.15 15.61 54.33">15.15</td></tr>
               <tr><th scope="row">Qwen2.5-VL-7B</th><td data-scores="31.03 37.41 61.87">31.03</td><td data-scores="13.62 13.95 71.92">13.62</td></tr>
@@ -182,19 +188,11 @@
               <tr><th scope="row">Llama-3.1-8B</th><td data-scores="31.65 34.05 34.35">31.65</td><td data-scores="8.00 8.00 3.96">8.00</td></tr>
               <tr><th scope="row">Llama-3.2-3B</th><td data-scores="26.26 26.26 23.92">26.26</td><td data-scores="7.91 7.91 0.00">7.91</td></tr>
             </tbody>
-            <tbody id="new-evaluations">
-              <tr class="group"><th colspan="3" scope="rowgroup">Test set results (New evaluations)</th></tr>
-              <tr><th scope="row">deepseek4.1-flash</th><td data-scores="48.92 53.25 - 51.67">48.92</td><td data-scores="27.70 28.18 - 28.06">27.70</td></tr>
-              <tr><th scope="row">qwen3.8-flash-next</th><td data-scores="49.91 56.72 - 54.63">49.91</td><td data-scores="32.37 32.58 - 32.50">32.37</td></tr>
-              <tr><th scope="row">glm-5.3-flash</th><td data-scores="48.02 54.55 - 52.52">48.02</td><td data-scores="34.44 34.55 - 34.51">34.44</td></tr>
-              <tr><th scope="row">qwen3.8-27B</th><td data-scores="44.38 49.51 - 47.72">44.38</td><td data-scores="34.76 34.77 - 34.77">34.76</td></tr>
-              <tr><th scope="row">GPT-6.2 Sol (Max)</th><td data-scores="62.37 73.87 98.20 71.53">62.37</td><td data-scores="46.27 48.07 97.48 47.36">46.27</td></tr>
-              <tr><th scope="row">GPT-6.2 Astra (Max)</th><td data-scores="59.22 69.72 98.20 67.54">59.22</td><td data-scores="48.04 49.75 97.84 49.07">48.04</td></tr>
-            </tbody>
           </table>
         </div>
-        <p class="table-note">The paper rows are unchanged and have not been rescored on the downloadable annotations. Line count &plusmn;1 measures answers within one line of the reference count. A dash means the metric was not reported here.</p>
-        <p class="table-note"><strong>November 24, 2026:</strong> The new evaluations are separate from the <a href="https://arxiv.org/abs/2609.31651">paper</a>. The GPT-6.2 Max runs used Codex CLI with the archived prompts and original WACV test labels. Each mode scored all 2,224 answers except Astra open, which scored 2,221 after three script-identification timeouts. The other four models' scores are reported as supplied.</p>
+        <p class="table-note">Bold marks the highest reported score for each metric and prompt mode within the proprietary and open-weight groups. Line count &plusmn;1 is the percentage of answers within one line of the reference count. A dash means not reported.</p>
+        <p class="table-note"><strong>Parameters:</strong> <a href="https://arxiv.org/html/2609.19969v1">DeepSeek-V4.1-Flash</a> has 196B Engram parameters in addition to its 552B backbone, with 8B active during prefill and 16B during decoding. <a href="https://huggingface.co/Qwen/Qwen3.8-Flash-Next">Qwen3.8-Flash-Next</a> has 51B n-gram embeddings and a 4B multi-token prediction module in addition to its 125B main model. <a href="https://huggingface.co/zai-org/GLM-5.3-Flash">GLM-5.3-Flash</a> reports 320B total and 18B active; <a href="https://huggingface.co/Qwen/Qwen3.8-27B">Qwen3.8-27B</a> is a 27B dense model.</p>
+        <p class="table-note">The <a href="https://arxiv.org/html/2609.31651v1#S5">paper scores</a> are unchanged. The GPT-6.2 Max runs used Codex CLI with the archived prompts and original WACV test labels rather than the paper's API runner. Each GPT mode scored 2,224 answers except Astra open, which scored 2,221 after three script-identification timeouts. The other new scores are reported as supplied.</p>
       </div>
     </section>
 

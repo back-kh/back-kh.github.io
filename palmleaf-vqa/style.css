@@ -120,6 +120,8 @@ select { max-width: 100%; min-height: 42px; padding: 6px 13px; border: 1px solid
 .results td { width: 24%; }
 .results tr:not(.group):hover { background: #f7faf8; }
 .results .top-score { color: var(--green); font-weight: 750; }
+.new-label { color: var(--muted); white-space: nowrap; }
+.model-params { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; font-weight: 400; line-height: 1.4; white-space: normal; }
 .table-note { margin-top: 12px; max-width: 84ch; color: var(--muted); font-size: 14px; }
 
 .citation-heading { display: flex; align-items: baseline; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }

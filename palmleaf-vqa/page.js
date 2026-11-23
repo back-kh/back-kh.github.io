@@ -11,8 +11,10 @@
   const captions = ['Exact-match accuracy (%)', 'Mean answer F1 (%)', 'Line count within one line (%)', 'Mean Jaccard (%)'];
   const metrics = document.querySelector('.metrics');
   const scores = [...document.querySelectorAll('.results [data-scores]')];
-  const paperScores = scores.filter(cell => !cell.closest('#new-evaluations'));
-  const paperColumns = [1, 2].map(column => paperScores.filter(cell => cell.cellIndex === column));
+  const rankedColumns = [...document.querySelectorAll('.results tbody[data-rank]')].flatMap(group => {
+    const cells = [...group.querySelectorAll('td[data-scores]')];
+    return [1, 2].map(column => cells.filter(cell => cell.cellIndex === column));
+  });
   const renderMetric = () => {
     const index = Number(metrics.querySelector(':checked').value);
     document.querySelector('#metric-caption').textContent = captions[index];
@@ -26,7 +28,7 @@
         cell.setAttribute('aria-label', 'Not reported');
       }
     }
-    for (const cells of paperColumns) {
+    for (const cells of rankedColumns) {
       const best = Math.max(...cells.map(cell => Number(cell.textContent)).filter(Number.isFinite));
       for (const cell of cells) cell.classList.toggle('top-score', Number(cell.textContent) === best);
     }
