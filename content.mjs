@@ -33,7 +33,7 @@ export const papers = {
     authors: ['Nimol Thuon', 'Jun Du', 'Panhapin Theang'],
     year: '2027', preprintYear: '2026', venue: 'WACV 2027 · Florida, USA · IEEE/CVF',
     url: 'https://arxiv.org/abs/2609.31651',
-    links: [['arXiv', 'https://arxiv.org/abs/2609.31651']],
+    links: [['Project page', 'https://back-kh.github.io/palmleaf-vqa/'], ['arXiv', 'https://arxiv.org/abs/2609.31651']],
     summary: 'A visual question answering resource for reasoning about manuscript condition, physical features, and page structure across regional collections. It tests multimodal language models on historical material beyond transcription.',
     arxiv: '2609.31651', primaryClass: 'cs.CV',
     citationNote: 'This citation refers to the 2026 arXiv preprint. The displayed conference year is 2027; final proceedings details are not included in this citation.'
